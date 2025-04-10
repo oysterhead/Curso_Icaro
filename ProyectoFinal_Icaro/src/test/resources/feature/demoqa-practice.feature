@@ -6,6 +6,7 @@ Feature: Completar formulario
     Scenario: Usuario ingresa a la web
       When usuario visualiza el titulo
       Then visualiza logo
+      And hace click en Forms
 
     @FormsOk
     Scenario: Usuario ingresa a la automatizacion del formulario

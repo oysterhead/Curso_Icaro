@@ -1,5 +1,6 @@
 package com.qapractice.stepdefinitions;
 
+import Page.DemoQAPages.HomePage;
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -13,8 +14,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
+
 public class Steps {
     private WebDriver driver;
+    private HomePage homePage;
 
     @Given("usuario se encuentra en el HomePage de DEMOQA")
     public void usuarioEnElHome(){
@@ -31,6 +34,7 @@ public class Steps {
         //Inicialización del Driver
         driver = new ChromeDriver(options);
         driver.get("https://demoqa.com/");
+        this.homePage = new HomePage(driver);
     }
 
     @When("usuario visualiza el titulo")
@@ -44,5 +48,10 @@ public class Steps {
     @Then("visualiza logo")
     public void visualizaLogo() {
         "Toolsqa.jpg"
+    }
+
+    @And("hace click en Forms")
+    public void haceClickEnForms() {
+        this.homePage.clickBtnForms();
     }
 }
