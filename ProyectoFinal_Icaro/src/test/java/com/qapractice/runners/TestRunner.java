@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/feature",
         glue = "com.qapractice.stepdefinitions",
         plugin = {"pretty", "html:target/cucumber-report.html"},
-        tags = "@OpenHomePage"
+        tags = "@OK"
 )
 
 public class TestRunner {
